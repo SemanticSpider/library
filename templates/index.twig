@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <center><h1>Популярные книги</h1></center>
+    <div class="popular_books">
+        {% for book in books %}
+            <center>
+                <div class="book">
+                    <img src="{{ book[4] }}" alt="">
+                    <div class="text-book">
+                        {% for author in authors %}
+                            {% if author[0] == book[2] %}<p>{{ author[2] }}, {{ author[1] }}</p>{% endif %}
+                        {% endfor %}
+                        <p><a>{{ book[1] }}</a></p>
+                    </div>
+                </div>
+            </center>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

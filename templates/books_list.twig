@@ -1,0 +1,38 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <center><h1>Список книг</h1></center>
+    {% if books %}
+        <div class="books">
+            {% for book in books %}
+                <center>
+                    <div class="book">
+                            <img src="{{ book[4] }}" alt="">
+                            <div class="text-book">
+                                <p>{{ book[1] }}</p>
+                                <p>{% for author in authors %} {% if author[0] == book[2] %}{{ author[2] }}, {{ author[1] }}{% endif %} {% endfor %}</p>
+                                <p>{% for gb in genre_book %} {% if gb[0] == book[0] %}
+                                        {% for genre in genres %}{% if gb[1] == genre[0] %}{{ genre[1] }}{% if loop.last == false %};{% endif %}
+                                        {% endif %}{% endfor %}
+                                    {% endif %}{% endfor %}</p>
+                                <p>Количество копий: {% set i = 0 %}{% for bookinstance in bookinstances %}
+                                        {% if bookinstance[1] == book[0] %}{% set i = i+1 %}{% endif %}{% endfor %}{{ i }}</p>
+                                <form action="books" method="post">
+                                    <input type="hidden" name="id" value="{{ book[0] }}">
+                                    <input type="submit" value="Удалить">
+                                </form>
+                            </div>
+
+                    </div>
+                </center>
+
+            {% endfor %}
+        </div>
+
+
+    {% else %}
+        <p>В нашей библиотеке пока нет книг</p>
+    {% endif %}
+    <a href="/books/create" class="but">Добавить книгу</a>
+{% endblock %}
+

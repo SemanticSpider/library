@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../src/icons/155-1559319_learn-open-book-icon-vector.ico">
+    <style>
+        ul {
+            list-style:none;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-nav a {
+            font-size: 20px;
+        }
+
+        .container-fluid {
+            /*padding-top: 50px;*/
+            margin: 75px 200px 75px 200px;
+            /*padding-top: 30px;*/
+            /*padding-left: 15px;*/
+            /*padding-right: 15px;*/
+            padding: 30px 15px 100px 15px;
+            background-color:aliceblue;
+            box-shadow: 0 0 20px #848383;
+
+        }
+
+        .row {
+            heigth: 400px;
+        }
+
+        .sidebar-nav {
+            margin-top: 20px;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+        }
+
+        .sidebar-nav a {
+            padding: 10px;
+            color: black;
+            font-size: 1.5em;
+        }
+
+        .col-sm-2 {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            background-color: #ddddff;
+            visibiluty:hidden;
+        }
+
+        .col-sm-10 {
+            padding-top: 50px;
+        }
+
+        h1 {
+            margin-top: 0px;
+            padding-top: 0px;
+            padding-bottom: 5px;
+
+        }
+
+        body {
+            background-color: rgba(173, 173, 173, 0.6);
+            font-family: "Times New Roman";
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 200px;
+
+        }
+
+        .popular_books {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 15px;
+            align-items: start;
+        }
+
+        .text-book {
+            background: rgba(173, 173, 173, 0.6);
+            width: 200px;
+            padding-bottom: 20px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .book {
+            border-radius: 0 0 20px 20px;
+            transition: all 1s;
+            margin-bottom: 30px;
+        }
+
+        .book:hover {
+            box-shadow: 0px 0px 10px black;
+        }
+
+        .books {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 15px;
+            align-items: start;
+        }
+
+        .author {
+            display: flex;
+            flex-direction: row;
+            align-items:end;
+            margin-bottom: 25px;
+            padding: 25px 25px;
+            border-radius: 15px;
+            background-color: rgba(173, 173, 173, 0.6);
+            transition: all 0.2s;
+        }
+
+        .author:hover {
+            box-shadow: 0 0 5px black;
+        }
+
+        .text-author {
+            margin-left: 15px;
+        }
+
+        .but {
+            padding: 10px 15px;
+            background-color: rgba(173, 173, 173, 0.6);
+            border-radius: 3em;
+            color:black;
+        }
+
+        .but:hover {
+            color:black;
+        }
+
+        .create {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <center><div><h1>Библиотека им. Ф. М. Достоевского</h1></div></center>
+        <div class="sidebar-nav">
+            <a href="/">главная</a>
+            <a href="/books">все книги</a>
+            <a href="/authors">все авторы</a>
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+{#        <div class="row">#}
+{#            <div class="col-sm-2">#}
+
+{#                    <a href="/">Главная</a>#}
+{#                    <a href="/books">Все книги</a>#}
+{#                    <a href="/authors">Все авторы</a>#}
+
+{#            </div>#}
+{#            <center>#}
+{#                <div class="col-sm-10">#}
+{#                    {% block content %}#}
+{#                    {% endblock %}#}
+{#                </div>#}
+{#            </center>#}
+
+
+
+{#        </div>#}
+    </div>
+
+</body>
+</html>

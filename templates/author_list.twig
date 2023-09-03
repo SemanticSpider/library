@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <center><h1>Список авторов</h1></center>
+
+    <div class="authors">
+        {% for author in  authors %}
+            <div class="author">
+                <img src="{{ author[5] }}" alt="">
+                <div class="text-author">
+                    <p>{{ author[2] }}, {{ author[1] }} ({{ author[3] }}{% if author[4] %} - {{ author[4] }}{% endif %})</p>
+                    <p>Количество книг автора в библиотеке: {% set i = 0 %}{% for book in books %}
+                            {% if author[0] == book[2] %}{% set i = i+1 %}{% endif %}
+                        {% endfor %}{{ i }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

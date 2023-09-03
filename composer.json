@@ -1,0 +1,22 @@
+{
+    "name": "slava/overplan",
+    "description": "libr",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Slava\\Overplan\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Slava",
+            "email": "slava.gvozdev99@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6",
+        "twig/twig": "^3.6"
+    }
+}

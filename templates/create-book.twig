@@ -1,0 +1,23 @@
+{% extends 'base.twig' %}
+
+
+{% block content %}
+    <form action="/books/create" method="post" class="create" enctype="multipart/form-data">
+        <label for="title">Название:</label>
+        <input type="text" name="title" placeholder="Введите текст">
+        <label for="author">Автор</label>
+        <select name="author" id="author">
+            {% for author in authors %}
+                <option value="{{ author[0] }}">{{ author[2] }}, {{ author[1] }}</option>
+            {% endfor %}
+        </select>
+        <label for="genre">Жанр</label>
+        <input type="text" name="genre">
+
+        <label for="date_pub">Дата публикации</label>
+        <input type="date" name="date_pub">
+        <label for="img">Обложка</label>
+        <input type="file" name="img"></br>
+        <input type="submit">
+    </form>
+{% endblock %}
